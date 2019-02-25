@@ -1,0 +1,63 @@
+{% load staticfiles %}
+{% load staticfiles %}
+<html>
+<head>
+<title>
+{% block title %}
+{% endblock %}
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel = 'stylesheet' type = 'text/css' href = "{% static 'music/style.css' %}">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<nav class = "navbar navbar-inverse">
+<div class = "container-fluid">
+<div class = "navbar - header">
+<a class = "navbar-brand" href = "{%url 'music:index' %}">Vibe</a>
+<button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#topNavBar">
+<span class = "icon-bar"></span>
+<span class = "icon-bar"></span>
+<span class = "icon-bar"></span>
+</button>
+</div>
+<div class = "collapse navbar-collapse" id = "topNavBar">
+<ul class = "nav  navbar-nav">
+<li class = "">
+<a href = "{% url 'music:index' %}">
+<span class = "glyphicon-cd" aria-hidden = "true"></span>&nbsp;Albums
+</a></li>
+<li class = "">
+<a href = "{% url 'music:index' %}">
+<span class = "glyphicon-cd" aria-hidden = "true"></span>&nbsp;Songs
+</a>
+</li>
+<form class = "navbar-form navbar-left" role = "search" method = "get" action = "#">
+<div class = "form-group">
+<input type = "text" class = "form-control" name = "q" value = "">
+</div>
+</form>
+<button type = "submit" class = "btn btn-default">Search</button>
+<ul class = 'navbar-nav navbar-right'>
+<li class = "">
+<a href = "{% url 'music:index' %}">
+<span class = "glyphicon-power" aria-hidden = "true"></span>&nbsp;Add Album</span>
+</a>
+</li>
+<li class = "">
+<a href = "{% url 'music:index' %}">
+<span class = "glyphicon-power" aria-hidden = "true"></span>&nbsp; Logout</span>
+</a>
+</li>
+</div>
+</div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

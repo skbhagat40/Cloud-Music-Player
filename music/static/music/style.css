@@ -1,0 +1,9 @@
+body{
+background : blue url("images/paper.jpg") 
+}
+.navbar-brand{
+	font-family:cursive;
+}
+.navbar{
+	border-radius : 100px;
+}
